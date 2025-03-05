@@ -33,7 +33,7 @@ DISPLAY=:1 fluxbox &
 sleep 2  # Give Fluxbox time to start
 
 # Start VNC server in view-only mode (no password)
-x11vnc -display :1 -forever -nopw -rfbport 5900 -viewonly &
+x11vnc -display :1 -forever -nopw -rfbport 5900 -viewonly -ncache 10 -ncache_cr -ws -shared &
 
 # Display main image initially
 DISPLAY=:1 feh --bg-scale "$MAIN_IMAGE" &
