@@ -21,8 +21,6 @@ RUN mkdir -p /root/.fluxbox && \
 
 # Copy image files (add your images to the images/ directory)
 COPY images/*.png /root/images/
-COPY images/*.jpg /root/images/
-COPY images/*.jpeg /root/images/
 RUN chmod 644 /root/images/*
 
 # Copy the start script
