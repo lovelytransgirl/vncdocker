@@ -1,13 +1,5 @@
 #!/bin/bash
 
-# Check if port is provided
-if [ -z "$1" ]; then
-    echo "Usage: $0 <port>"
-    exit 1
-fi
-
-VNC_PORT=$1
-
 # Configuration
 INTERVAL_MINUTES=1
 IMAGE_DIR="/home/vncuser/images"   # Directory containing images
@@ -41,7 +33,7 @@ DISPLAY=:1 fluxbox &
 sleep 2  # Give Fluxbox time to start
 
 # Start VNC server in view-only mode (no password)
-x11vnc -display :1 -forever -nopw -rfbport $VNC_PORT -viewonly -shared -xkb &
+x11vnc -display :1 -forever -nopw -rfbport 5900 -viewonly -shared -xkb &
 
 # Display main image initially
 DISPLAY=:1 feh --bg-scale "$MAIN_IMAGE" &
